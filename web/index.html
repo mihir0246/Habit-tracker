@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Habit Tracker</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="totalHabits">0</span>
+                    <span class="stat-label">Total Habits</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="completedToday">0</span>
+                    <span class="stat-label">Completed Today</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="currentMonth"></h2>
+                    <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="calendar-grid" id="calendar"></div>
+            </div>
+
+            <div class="habits-container">
+                <div class="habits-header">
+                    <h2>Your Habits</h2>
+                    <button id="addHabitBtn" class="btn-primary"><i class="fas fa-plus"></i> Add Habit</button>
+                </div>
+                <div class="habits-list" id="habitsList"></div>
+            </div>
+        </main>
+
+        <footer>
+            <button id="saveBtn" class="btn-primary"><i class="fas fa-save"></i> Save</button>
+        </footer>
+    </div>
+
+    <!-- Add Habit Modal -->
+    <div id="addHabitModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Habit</h2>
+            <form id="addHabitForm">
+                <div class="form-group">
+                    <label for="habitName">Habit Name</label>
+                    <input type="text" id="habitName" required>
+                </div>
+                <div class="form-group">
+                    <label for="habitCategory">Category</label>
+                    <input type="text" id="habitCategory" required>
+                </div>
+                <button type="submit" class="btn-primary">Add Habit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Habit Details Modal -->
+    <div id="habitDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="habitDetailsTitle"></h2>
+            <div id="habitDetailsContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
